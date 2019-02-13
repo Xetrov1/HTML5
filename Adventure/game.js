@@ -7,10 +7,24 @@ function Game() {
     Facility();
 }
 
-var Player = {---
+var Player = {
  hp = 20; // out 0f 10
  var mentalhp = 20; // out of 10
  var viruslvl = 0; // out of 80, 0 = 0, 1 = 20, 2 = 40, 3 = 60, 4 = 80;
+}
+var playerInjuries = {
+    headInjury:0,
+    chestInjury:0,
+    leftArm:0,
+    rightArm:0,
+    leftHand:0,
+    rightHand:0,
+    leftLeg:0,
+    rightLeg:0,
+    leftFoot:0,
+    rightFoot:0;
+    
+    
 }
 var zombielvl = 1; // out of 100(affects zombies hp and regen and affects there mutation rate)
 /*
@@ -44,15 +58,12 @@ function Facility() {
 }
 
 function Stats(hp,mentalhp,viruslvl) {
+ var virustest;
 
     alert("Hp is at: " + hp );
     alert("Mental Health is at: " + mentalhp);
-    alert("Virus Level is at: " + viruslvl);
-   CalculateOverallHealth();
-    
-} 
-function CalculateOverallHealth(hp,mentalhp,viruslvl) {
-   var virustest;
+    alert("Virus Level is at: " + viruslvl);  
+  // sees what lvl the players virus level is at.
    if(viruslvl == 0 ) {
        virustest = 0;
    }
@@ -99,22 +110,44 @@ var zombielvl1 = {
     legs:random(0,2), // zombie can't move very fast with out legs and must stand still to attack if 0
 }
 function Inventory() {
-    var Stuff = prompt(" - take, - use, - put in, - what? ")toLowerCase();
+    var Stuff = prompt(" - take, - use, - take, - what ").toLowerCase();
     switch(inventory).
         case "take":
-        prompt("What do you want to take? ");
+        prompt("What do you want to take? ").toLowerCase();
         break;
         case "use":
         prompt("What do you want to use? " + "/n What do you want to use it on? ");
         break;
+        case "take":
+        prompt("What do you want to take? ").toLowerCase();
+        break;
+        case "what":
+        var item = prompt("What item do you want to know about? ").toLowerCase();
+        switch (item) 
+        case "painkillers": {
+                alert("Painkillers can give an increase in hp and or add hp to the value.");
+        } break;
+    case "ammo": alert("Ammo is used to fire firearms or trade for food and such."); break;
+    case "knife": alert("Knife is used to harvest food from animals skin or flesh and also to sever zombie's arms and legs and also the head."); break;
+    case "huntingRifle":  alert("The Hunting Rifle is used to hunt either animals or zombies or other people, a hunting rifle uses 2 ammo per shot and has farther range than the pistol."); break;
+    case "pistol": alert("The pistol can be used for rapid fire it uses one ammo per shot and doesn't have as much range."); break;
+    case "pipe":  alert("The pipe can be used to break bones or to bash down open wooden boards."); break;
+    case "water": // water or Water
+    case "Water":  alert("Water is a basic necesity you can choose when to drink it or have it auto be done."); break;
+    case "food": 
+    case "Food": alert("Food is a basic necesity you can choose when to eat it or have it auto be done."); break;        
+    case "antidote": || case "Antidote": {
+        alert("Antidotes your best friend they can help fight off the infection if you get bitten or inflicted by any infected thing ");
+    } break;
+    case "book": || case "B": {alert("Ah a book your friend to take a rest from all the crazy mayhem it will restore mental health");
     
-} 
+    } break;
 
 
 
 
 // Alien Language
-       /* A = !
+     /* A = !
         B = @
         C = #
         D = $
