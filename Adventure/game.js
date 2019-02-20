@@ -1,4 +1,4 @@
-alert("testing");//var pc = prompt("Its been awhile since i've seen anyone out here, What is your name lost one?");
+
 Game();
 function Game() {
     
@@ -33,28 +33,51 @@ var zombielvl = 1; // out of 100(affects zombies hp and regen and affects there 
 
 var health = CalculateOverallHealth();
 
-function Facility() {        ``
-   thing = prompt("As you wake up you hear a cold robotic voice say Cyropod Deactivated...Running dianostics..Health-good...Hunger 69%...Thirst 40%...Unidentified Energy Fluxuations Initilizing Scan..You slowly open your eyes and wipe away a cold liquid from them after you hear the mechanical voice from the outside of the pod...Sector 47 is 67% infected by unknown infection. /n - Look Around, /n - Open Door, /n - Wait") ;
-     switch (thing)
-         
-         case "start":
-        prompt("As you wake up you hear a cold robotic voice say Cyropod Deactivated...Running dianostics..Health-good...Hunger 69%...Thirst 40%...Unidentified Energy Fluxuations Initilizing Scan..You slowly open your eyes and wipe away a cold liquid from them before you hear the voice from the outside of the pod you are in...Sector 47 is 67% infected by unknown infection. /n - Look Around, /n - Open Door, /n - Wait"); break;
-         case "wait":
-   var wait = prompt("As you sit there and wait you start to get bored before you see a man across from you in a pod pull the release latch and the door swings down and exits. He looks around before locking eyes with you and asks if you want to leave with him. /n - Open the door, /n - Refuse, /n - Wait").toLowerCase(); break;
-           case "wait"" {
-            var ait = prompt("As you just sit there thinking you hear a low murmur and look out of the pod. The man is staring at someone who is coming close. Hey do you want to leave with me?!, Oh god. You see a women who's flesh is rotting off rush and grab the man and takes a bite of his right arm before your eyes. The man then is screaming and the girl bites his head off. /n - open the door, /n - crouch down");  mentalhp--; // reduces mental hp by 1
-            /*if (ait == "crouch down") {
-                
-            }
-        }
-    else if (awake == "Look" || awake == "look around"){
-        var look = prompt("outside of the pod you see that most of the 
-        pods vital signs are all straight lines, exepect for three of them. It is also a little dark outside of the pod and you notice its very quiet before you hear a loud boom and see the pod next to you in line break open and you see a young girl come out and you hear moaning and see on the left a female lady come out though its looks like her flesh is rotting off and is slowly drawing close to the crying girl . /n - open door, / n - wait");
+function Facility() {             
+        
+        var thing = prompt("As you wake up you hear a cold robotic voice say Cyropod Deactivated...Running dianostics..Health-good...Hunger 69%...Thirst 40%...Unidentified Energy Fluxuations Initilizing Scan..You slowly open your eyes and wipe away a cold liquid from them before you hear the voice from the outside of the pod you are in...Sector 47 is 67% infected by unknown infection. /n - Look Around, /n - Open Door, /n - Wait").toLowerCase(); //break;
+         if (thing = "wait" || (thing = "Wait")) {
+   var wait = prompt("As you sit there and wait you start to get bored before you see a man across from you in a pod pull the release latch and the door swings down and exits. He looks around before locking eyes with you and asks if you want to leave with him. /n - Go, /n - Refuse, /n - Wait").toLowerCase(); 
+         if(wait = "go") {
+            var pew = prompt("Kay lets go right, You have arrived in an elevator room. Well ships wait here i'll go turn on the generator. /n wait. /n follow him").toLowerCase();
+             if (pew == "wait" || pew == "refuse") {
+                 alert("He comes back and you both leave, he is cradiling his arm. Commander your still alive! Wait commander whats wrong, You see the man before your slowly turning paler his eyes turn red and he bites you before killing the rest of the group. You are now a part of the Zombie faction welcome second leader. Congrats you have survived");
+             }
+             else {
+                alert("As you follow him he walks into the generator room, he turns it on right as he is about to leave though a zombie jumps out at him, You rush out and tackle the zombie before he stabs it with a knife, Didn't i tell you to wait, oh well thanks for the save now lets get out of here. As you both climb up the elevator into the light you see the military, 'Commander your still alive?', Yes all thanks to this gentle person now give me a gin and lets get out of here. CONGRATS YOU HAVE SURVIVED");
+             }
+         } }
+         if (wait ="Wait"  || (wait ="wait")) {
+            var ait = prompt("So I guess I'll be off then. /n Leave" ).toLowerCase();
+             if(ait != "leave") {
+                 alert("You decide to spend eternity in the cold. You have died");
+             } // end ait if
+         } // end wiat if
+        else if (awake == "Look" || awake == "look around" || ait == "leave"){
+        var look = prompt("Outside of the pod you see that most of the pods vital signs are all straight lines, except for three of them. It is also a little dark outside of the pod and you notice its very quiet before you hear a loud boom and see the pod next to you in line break open and you see a young girl come out and you hear moaning and see on the left a female lady come out though its looks like her flesh is rotting off and is slowly drawing close to the crying girl. /n - open door, / n - wait, /n - save").toLowerCase();
+    } if(look == "save") {
+        alert("As you jump out the pod you hit the zombie with the door when you open it causing the zombie to die, As you aproach the girl you hear I'm so hungry, before you see the girl change into a zombie right before your eyes and bite you. YOU HAVE DIED!! /n /n or did you?");
+        Game()
     }
     else {
-        prompt("As you pull down the door you see a man across from you open his pod door. ");
+        var direction = prompt("All along this hall your in, are cyropods just like yours all of them are empty except for a few bodies of course. /n - Go Right, /n - Go Left").toLowerCase();
     }
-    
+    if (direction == "go right") {
+        prompt("You arrive back inside of an elevator room. It appears to have no power /n try elevator, /n go back");
+    }
+    else {
+        var things = prompt("You are inside of a generator room currently you hear groaning sounds from an closet. /n look inside, /n turn on");
+        if (things == "turn on"){
+            var hings = prompt("You turn on the generator and you hear slight moaning sounds from a closest. /n go back, /n wait").toLowerCase();
+                   if(hings = "go back") {
+              var up = prompt("You just keep running into the next room, This room is an elevator it has power now, /n go up").toLowerCase();
+            }
+            if (up = "go up"){
+                alert("As you go up you see a heavily armored squad, Hey its a survivor. CAREFUL they could of gotten bitten lets take a look then lets go, You have survived!");
+            }
+                   else ("You look inside the closet and a zombie jumps out and tears you into to shreds. YOU HAVE DIED!");
+        }
+    }
     } // end function Facility 
 
 function Stats(hp,mentalhp,viruslvl) {
@@ -180,5 +203,33 @@ function Inventory() {
         X = ¶
         Y = •
         Z = ~ */
-        
-        
+        function room() {
+                
+                switch (rooms) 
+                    {
+                        case 1:
+                            
+                            
+                        break;
+                            
+                        case 2:
+                            
+                            
+                        break;
+                            
+                        case 3:
+                            
+                            
+                        break;
+                    }
+                
+        }
+/*         _________________  __________________________________________   __________
+    //     |               |__|                                        |___|        |
+    //     | Generator Room __          Cyrostasis Room                 ___ Elevator|
+    //     |               |  |                                        |   |  Room  |
+    //     |_______________|  |________________________________________|   |________|
+    
+    
+    
+    */
