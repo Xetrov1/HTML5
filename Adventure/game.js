@@ -5,6 +5,9 @@ function Game() {
     var gameName = ["The Gate","The Wall","The ∞-'¢¡"];
     alert("Welcome to "+gameName[1]);
     var name = prompt("Hello there mind telling your name before you go into cryostasis").toLowerCase();
+    while(!confirm("Are you sure you want" + name + " as your name?")){
+        name = prompt("What name do you want?");
+    }
     Facility();
 }
 /*
@@ -41,16 +44,20 @@ function Facility() {
          if(wait = "go") {
             var pew = prompt("Kay lets go right, You have arrived in an elevator room. Well ships wait here i'll go turn on the generator. /n wait. /n follow him").toLowerCase();
              if (pew == "wait" || pew == "refuse") {
-                 alert("He comes back and you both leave, he is cradiling his arm. Commander your still alive! Wait commander whats wrong, You see the man before your slowly turning paler his eyes turn red and he bites you before killing the rest of the group. You are now a part of the Zombie faction welcome second leader. Congrats you have survived");
+                 alert("He comes back and you both leave, he is cradling his arm. Commander your still alive! Wait commander whats wrong, You see the man before your slowly turning paler; his eyes turn red and he bites you before killing the rest of the group. You are now a part of the Zombie faction welcome second leader. Congrats you have somewhat survived"); viruslvl = 10;
+                 else 
+                     prompt("well fine then")
              }
              else {
-                alert("As you follow him he walks into the generator room, he turns it on right as he is about to leave though a zombie jumps out at him, You rush out and tackle the zombie before he stabs it with a knife, Didn't i tell you to wait, oh well thanks for the save now lets get out of here. As you both climb up the elevator into the light you see the military, 'Commander your still alive?', Yes all thanks to this gentle person now give me a gin and lets get out of here. CONGRATS YOU HAVE SURVIVED");
+              var choice = prompt("As you follow him he walks into the generator room, he turns it on right as he is about to leave though a zombie jumps out at him, You rush out and tackle the zombie before he stabs it with a knife, Didn't i tell you to wait, oh well thanks for the save now lets get out of here. As you both climb up the elevator into the light you see the military, 'Commander your still alive?', Yes all thanks to this kind person now give me a gun and lets get out of here. /n follow group, go alone").toLowerCase(); pistol++; ammo=50;
+                 if (choice == "follow group")
+                     prompt("Well I just realized I never asked ya your name my name is Grofdin. What is your name? /n tell name, /n refuse to tell name(refuse)").toLowerCase;
              }
          } }
          if (wait ="Wait"  || (wait ="wait")) {
             var ait = prompt("So I guess I'll be off then. /n Leave" ).toLowerCase();
              if(ait != "leave") {
-                 alert("You decide to spend eternity in the cold. You have died");
+                 alert("You have decided to spend eternity in the cold. You have died");
              } // end ait if
          } // end wiat if
         else if (awake == "Look" || awake == "look around" || ait == "leave"){
@@ -79,13 +86,22 @@ function Facility() {
         }
     }
     } // end function Facility 
-
+switch(doThings) {
+        
+    case "inventory":
+        inventory;
+        break;
+    case "stats":
+        Stats();
+        break;
+}
 function Stats(hp,mentalhp,viruslvl) {
  var virustest;
 
     alert("Hp is at: " + hp );
     alert("Mental Health is at: " + mentalhp);
     alert("Virus Level is at: " + viruslvl);  
+    
   // sees what lvl the players virus level is at.
    if(viruslvl == 0 ) {
        virustest = 0;
@@ -108,7 +124,7 @@ function Stats(hp,mentalhp,viruslvl) {
  var overallhealth = (hp / 2) + (mentalhp / 2) + virustest;
     alert("Overall Health is at: "+ overallhealth);
 } 
-/*
+
 var inventory = {
     painkillers:0, // increases health
     ammo:0, // how many shots you have
@@ -124,7 +140,7 @@ var inventory = {
     lighter:0, // can use to catch something flamable on fires
     
 }
-*/
+
 /*
 var zombielvl1 = {
     ehp = 10; // zombies hp
@@ -158,7 +174,7 @@ function Inventory() {
     case "knife": alert("Knife is used to harvest food from animals skin or flesh and also to sever zombie's arms and legs and also the head."); break;
     case "huntingRifle":  alert("The Hunting Rifle is used to hunt either animals or zombies or other people, a hunting rifle uses 2 ammo per shot and has farther range than the pistol."); break;
     case "pistol": alert("The pistol can be used for rapid fire it uses one ammo per shot and doesn't have as much range."); break;
-    case "pipe":  alert("The pipe can be used to break bones or to bash down open wooden boards."); break;
+    case "pipe":  alert("The pipe can be used to break bones or to bash down wooden boards."); break;
     case "water": // water or Water
     case "Water":  alert("Water is a basic necesity you can choose when to drink it or have it auto be done."); break;
     case "food": 
@@ -169,7 +185,7 @@ function Inventory() {
     break;
     case "book":
     case "B":
-                alert("Ah a book your friend to take a rest from all the crazy mayhem it will restore mental health");
+                alert("Ah a book it will restore mental health");
     break;
               }
 */
@@ -207,24 +223,30 @@ function Inventory() {
                 
                 switch (rooms) 
                     {
-                        case 1:
+                        case "Cyro":
                             
                             
                         break;
                             
-                        case 2:
+                        case "Elevator":
                             
                             
                         break;
                             
-                        case 3:
+                        case "Generator":
                             
                             
                         break;
                     }
                 
         }
-/*         _________________  __________________________________________   __________
+///
+///
+///
+////
+///                                                                      |______ ______|
+///                                                                            | |
+/*         _________________  __________________________________________   ____| |___
     //     |               |__|                                        |___|        |
     //     | Generator Room __          Cyrostasis Room                 ___ Elevator|
     //     |               |  |                                        |   |  Room  |
