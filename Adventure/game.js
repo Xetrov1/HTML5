@@ -10,6 +10,7 @@ function Game() {
     }
     Facility();
 }
+bossHp = 5;
 /*
 var Player = {
  hp = 20; // out 0f 10
@@ -44,16 +45,61 @@ function Facility() {
          if(wait = "go") {
             var pew = prompt("Kay lets go right, You have arrived in an elevator room. Well ships wait here i'll go turn on the generator. /n wait. /n follow him").toLowerCase();
              if (pew == "wait" || pew == "refuse") {
-                 alert("He comes back and you both leave, he is cradling his arm. Commander your still alive! Wait commander whats wrong, You see the man before your slowly turning paler; his eyes turn red and he bites you before killing the rest of the group. You are now a part of the Zombie faction welcome second leader. Congrats you have somewhat survived"); viruslvl = 10;
-                 else 
-                     prompt("well fine then")
+                var hunt = prompt("He comes back and you both leave, he is cradling his arm. Commander your still alive! Wait commander whats wrong, You see the man before your slowly turning paler; his eyes turn red and he bites you before killing the rest of the group. You are now a part of the Zombie faction welcome Primal Leader. /n Hunt,/n Look").toLowerCase(); viruslvl = 10; 
+                if(hunt = "look") {
+                     var a = prompt("As you look around you see a door to your left and a door straight infront of you. So Primal Leader, Your mission is to hunt the remaining people on this floor I will head down and make sure everyone down there is dead. /n hunt");
+                 }
+                    if (hunt == "hunt" || a == "hunt") {
+                        var b = prompt("You smell a sweet scent from the door to your east and hear a grinding noise infront of you. /n east, /n north or front")
+                        if (b == "east" || b == "e") {
+                            var c = prompt("You walk inside of a main office, there is a table and chairs. You hear faint crying noise from below the table. /n table") }
+                            else {
+                                var ikill = prompt("You see a young girl she is crying amd curled into a ball, /n kill, /n infect /n leave");
+                                if (ikill = "infect") {
+                                    prompt("You bite the little girl she turns paler and stares at you with blue eyes there appears to be sparks coming out of them. You: You are now Arcane Leader. /n leave(when you leave you also go to the north"); }
+                                    
+                                       if(p == "north" || p == "n") {
+                                       var leave = prompt ("You walk into the room and smell the fresh dead air, The girl follows you . The door is now open /n leave");}
+                                           else {
+                                               alert("You walk out holding hands with the girl you don't know if you want to be infected but you know you don't want others to. YOU have won");                           
+                                    } // infected lil girl and leave // ou won
+                                
+                                if (ikill = "kill") {
+                                    var p = prompt("As your leave you know that the child will make no more sound. {u monster u} /n north");
+                                    if(p == "north" || p == "n") {
+                                       var leave = prompt ("You walk into the room and smell the fresh dead air. The door is now open /n leave, /n wait");
+                                    }
+                                    if (leave = "leave") {
+                                        alert("You have won")
+                                    }
+                                }
+                            else {
+                                var t = prompt("I thought i told you to kill everyone you see goodbye primal leader, /n fight, /n accept fate")
+                               if(t = "fight"){
+                                   var e = prompt("/n Attack, /n accept fate");
+                                   if (e = "attack") { 
+                                       alert("You slash him with your claws");  bossHp--; e = null; }
+                                   else {alert("After fighting a bit you give up");}
+                                   while(bossHp > 1)
+                                   alert("As he is about to deliver the final blow. your head makes faint cracking noises in your head and a wave of pure energy blasts out from you and kills him. You feel the infection leave your body. You have won as a survivor");
+                               }
+                                else 
+                                    alert("You have lost")
+                            }
+                            
+                        }
+                        
+                    
              }
              else {
               var choice = prompt("As you follow him he walks into the generator room, he turns it on right as he is about to leave though a zombie jumps out at him, You rush out and tackle the zombie before he stabs it with a knife, Didn't i tell you to wait, oh well thanks for the save now lets get out of here. As you both climb up the elevator into the light you see the military, 'Commander your still alive?', Yes all thanks to this kind person now give me a gun and lets get out of here. /n follow group, go alone").toLowerCase(); pistol++; ammo=50;
                  if (choice == "follow group")
                      prompt("Well I just realized I never asked ya your name my name is Grofdin. What is your name? /n tell name, /n refuse to tell name(refuse)").toLowerCase;
              }
-         } }
+                 else {
+                     var q = prompt("As they leave you notice there are is a door to your left you hear faint crying from inside, to the north is a large metal door that is slowly opening")
+                 }
+          }
          if (wait ="Wait"  || (wait ="wait")) {
             var ait = prompt("So I guess I'll be off then. /n Leave" ).toLowerCase();
              if(ait != "leave") {
@@ -219,7 +265,7 @@ function Inventory() {
         X = ¶
         Y = •
         Z = ~ */
-        function room() {
+      /*  function room() {
                 
                 switch (rooms) 
                     {
@@ -239,19 +285,15 @@ function Inventory() {
                         break;
                     }
                 
-        }
+        }*/
 ///
 ///
 ///
-////
+////                                                                          upper 
 ///                                                                      |______ ______|
 ///                                                                            | |
-/*         _________________  __________________________________________   ____| |___
+     //    _________________  __________________________________________   ____| |___
     //     |               |__|                                        |___|        |
     //     | Generator Room __          Cyrostasis Room                 ___ Elevator|
     //     |               |  |                                        |   |  Room  |
     //     |_______________|  |________________________________________|   |________|
-    
-    
-    
-    */
