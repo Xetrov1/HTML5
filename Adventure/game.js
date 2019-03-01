@@ -42,6 +42,9 @@ function Facility() {
         var thing = prompt("As you wake up you hear a cold robotic voice say Cyropod Deactivated...Running dianostics..Health-good...Hunger 69%...Thirst 40%...Unidentified Energy Fluxuations Initilizing Scan..You slowly open your eyes and wipe away a cold liquid from them before you hear the voice from the outside of the pod you are in...Sector 47 is 67% infected by unknown infection. /n - Look Around, /n - Open Door, /n - Wait").toLowerCase(); //break;
          if (thing = "wait" || (thing = "Wait")) {
    var wait = prompt("As you sit there and wait you start to get bored before you see a man across from you in a pod pull the release latch and the door swings down and exits. He looks around before locking eyes with you and asks if you want to leave with him. /n - Go, /n - Refuse, /n - Wait").toLowerCase(); }
+    if (wait =="refuse") {
+        alert("You decide to never leave the cyropod you starved to death. You have Died!");
+    }
          if(wait = "go") {
             var pew = prompt("Kay lets go right, You have arrived in an elevator room. Well ships wait here i'll go turn on the generator. /n wait. /n follow him").toLowerCase();
              if (pew == "wait" || pew == "refuse") {
